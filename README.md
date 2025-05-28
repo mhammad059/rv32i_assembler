@@ -4,12 +4,12 @@ A basic RISC-V assemble capable of converting rv32i instructions to machine code
 ## Usage
 
 ```shell
-./assembler.exe assemblyFile.s outputFile.h -h
+./assembler assemblyFile.s outputFile.h -h
 ```
 or if the required file is binary file,
 
 ```shell
-./assembler.exe assemblyFile.s outputFile.bin -b
+./assembler assemblyFile.s outputFile.bin -b
 ```
 ### Example Usage
 ```shell
