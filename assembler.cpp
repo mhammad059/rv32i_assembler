@@ -73,7 +73,7 @@ std::string string_trim(std::string inst, int index){
 
 // prints hex inst
 void printHEX(uint32_t inst){
-    std::cout << "0x" << std::hex << std::setfill('0') << std::setw(8) << std::uppercase << inst << std::endl;
+    std::cout << std::hex << std::setfill('0') << std::setw(8) << std::uppercase << inst << std::endl;
 }
 
 void writeHEX_toFile(uint32_t inst, std::ofstream& file){
