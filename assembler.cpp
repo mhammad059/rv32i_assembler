@@ -289,7 +289,7 @@ public:
         imm = imm << 2;;
 
         //                  20                   10:1                              1111 1111 0000 0000 | 19:12       
-        instBIN = (!!((1 << 20) & imm) << 31) + ((0x7FE & imm) << 20) + (!!((1 << 11) & imm) << 13) + (0xFF000 & imm) + (rd << 7) + opcode;
+        instBIN = (!!((1 << 20) & imm) << 31) + ((0x7FE & imm) << 20) + (!!((1 << 11) & imm) << 20) + (0xFF000 & imm) + (rd << 7) + opcode;
     }
 };
 
@@ -363,9 +363,9 @@ int main(int argc, char* argv[]){
         instPTRS[i]->compute_binINST();
 
         // printHEX(instPTRS[i]->get_binINST());
-        if(std::string(argv[3]) == "hex")
+        if(std::string(argv[3]) == "-h")
             writeHEX_toFile(instPTRS[i]->get_binINST(), destination);
-        else if(std::string(argv[3]) == "bin")
+        else if(std::string(argv[3]) == "-b")
             writeBIN_toFile(instPTRS[i]->get_binINST(), destination);
         else {
             std::cerr << "Invalid output type! ->" << argv[3] << "<-" << std::endl << "Use hex or bin" << std::endl;
